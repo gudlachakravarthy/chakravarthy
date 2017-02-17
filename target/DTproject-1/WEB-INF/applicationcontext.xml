@@ -1,0 +1,41 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:util="http://www.springframework.org/schema/util" xmlns:mvc="http://www.springframework.org/schema/mvc"
+ xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+  http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd
+  http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+ 
+ <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+ <property name="dataSource" ref="datasource"></property>
+ <property name="hibernateProperties">
+ <props>
+ <prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop>
+ <prop key="hibernate.show_sql">true</prop>
+ <prop key="hibernate.hbm2ddl.auto">update</prop>
+ <prop key="hibernate.format_sql">true</prop>
+ </props>
+ </property>
+ <property name="annotatedClasses">
+ <list>
+ <value>com.model.Product</value>  
+ <value>com.model.Category</value>
+ <value>com.model.Users</value>  
+ <value>com.model.Authorities</value>
+ <value>com.model.Customer</value>
+ <value>com.model.ShippingAddress</value>
+ <value>com.model.BillingAddress</value>
+ <value>com.model.Cart</value> 
+ </list>
+ </property>
+ </bean>
+ <bean id="datasource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+ <property name="driverClassName" value="org.h2.Driver"></property>
+ <property name="url" value="jdbc:h2:tcp://localhost/~/test"></property>
+ <property name="username" value="chakri"></property>
+ <property name="password" value="chakri"></property>
+ </bean>
+ <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+ <property name="sessionFactory" ref="sessionFactory"></property>
+ </bean>
+ </beans>
