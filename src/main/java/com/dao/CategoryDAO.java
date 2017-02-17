@@ -6,5 +6,4 @@ import com.model.Category;
 
 public interface CategoryDAO
 {
-	List<Category> getcatgories();
-}
+	List<Category> getcatgories();}
