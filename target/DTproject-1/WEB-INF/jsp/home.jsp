@@ -1,14 +1,42 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+<%@ page isELIgnored="false" %>
+<!DOCTYPE html>
 <%@ include file="header.jsp" %>
+
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
 <title>Home</title>
+
+<style>
+ body {
+    background-color: HoneyDew;   
+    margin-top: 6%;
+    margin-bottom: 1%;
+    margin-right: 1%;
+    margin-left: 1%;
+    
+}
+h2{
+margin-top: 10%;
+}
+h4{
+margin-top: 1%;
+}
+
+ </style>
+
 </head>
+ 
+<c:url var="im" value="/resources/Img/"></c:url>
 <body>
-   Under construction
+
+<h2 align="center">I Am Who I Am!</h2>
+<h4 align="center">With Passion For Real, Good Products</h4>
+<h4 align="center">Choose A Pricing Plan That Fits Your Needs</h4>
 </body>
 </html>
 <%@ include file="footer.jsp"%>

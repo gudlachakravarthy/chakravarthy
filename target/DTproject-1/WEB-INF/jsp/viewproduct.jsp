@@ -6,13 +6,22 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>View Product</title>
-<c:url var="style" value="/resources/css/header.css"></c:url>
-<link rel="stylesheet" href="${style}"/> 
+
+<style>
+ body {
+    background-color: OldLace;
+    margin : 9%;
+}
+ </style>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
 </head>
-<body>
+
+<body ng-app="app"  ng-controller="ProductController">
+<div >
 <div class="page-header">
 <b>PRODUCT DETAILS</b>
 </div>
+
 <table class="table">
 <tr>
 <td>Product Name</td>
@@ -33,7 +42,16 @@
 <tr>
 <td>Date Manufactured</td>
 <td>${product.mfg}</td>
-</tr>
-</table>
+
+            <tr>
+			<td>
+			</td>
+			
+			<td><a href="" ng-click="addToCart(${product.id })"><span class="glyphicon glyphicon-shopping-cart"></span></a></td>
+			</tr>
+
+		</table>
+		</div>
+	<script src="<c:url value="/resources/js/controller.js"></c:url>"></script>
 </body>
 </html>

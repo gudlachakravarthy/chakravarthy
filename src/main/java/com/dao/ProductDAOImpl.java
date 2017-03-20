@@ -1,6 +1,8 @@
 package com.dao;
 
 import java.util.List;
+
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +36,15 @@ public class ProductDAOImpl implements ProductDAO
 		session.close();
 		return products;
 	}
+	
+	public byte[] loadImage(int productid){
+		   Session session = sessionFactory.openSession();
+		   Product product = (Product)session.get(Product.class, productid);
+		   byte[] b = product.getPicture();
+		   return b;
+	   }
+
+	
 	public Product getproductByID(int id)
 	{
 		Session session = sessionFactory.openSession();
@@ -55,5 +66,12 @@ public class ProductDAOImpl implements ProductDAO
 		session.update(product); //update product set ..... where id=?
 		session.flush();
 		session.close();	
+	}
+	public List<Product> getProductByDiscount(){
+		Session session = sessionFactory.openSession();
+		Query query = session.createQuery("from Product where category.id=?");
+		query.setInteger(0, 2);
+		List<Product> product = query.list();
+		return product;
 	}
 }

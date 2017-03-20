@@ -11,6 +11,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Edit form</title>
+
+<style>
+ body {
+    background-color: black;
+    margin : 9%;
+    margin-left:5%;
+}
+ </style>
+
 </head>
 <body>
 
@@ -30,7 +39,7 @@
   
   <c:url var="addAction" value="/admin/product/editProduct"></c:url>
 
-	<form:form action="${addAction}" modelAttribute="product1" id="btn-add" method="post">
+	<form:form action="${addAction}" modelAttribute="product1" enctype="multipart/form-data" method="post">
    <%-- 
   <form:form  modelAttribute="product1" method="post" action="editProduct"> --%> 
   <div class="form-group">
@@ -71,6 +80,10 @@
 </c:forEach>
 </div>
  
+<div class="form-group">
+<label for="image">Image</label>
+<input name="fileUpload" type="file"/>
+</div>
 
 
   <input type="submit" value="Edit Product" class="btn btn-default">

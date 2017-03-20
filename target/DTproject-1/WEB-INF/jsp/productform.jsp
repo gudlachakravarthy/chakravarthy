@@ -10,6 +10,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Form</title>
 
+<style>
+ body {
+    background-color: SeaShell;
+    margin : 9%;
+    margin-left:5%;
+}
+ </style>
+
 <script>
   $(function(){
 	  $('input[name=mfg]').datepicker({
@@ -25,7 +33,7 @@
  <div class="container-wrapper"> 
   <div class="container">
   <c:url var="addAction" value="/admin/product/addproduct"></c:url>
-  <form:form id="registerForm" modelAttribute="product" method="post" action="${addAction}" enctype="multipart/form-data">>
+  <form:form id="registerForm" modelAttribute="product" method="post" action="${addAction}" enctype="multipart/form-data">
   <div class="form-group">
    <label for="id"></label>
    <form:hidden path="id"/>

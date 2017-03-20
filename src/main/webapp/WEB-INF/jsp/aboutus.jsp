@@ -5,9 +5,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>About Us</title>
+
+<style>
+ body{
+    background-color: LavenderBlush;
+    margin : 9%;
+}
+ </style>
+
 </head>
+
 <body>
-  Give some details about our site
-</body>
+
+</body class="aboutus">
 <%@include file="footer.jsp" %>
 </html>

@@ -1,22 +1,32 @@
 package com.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
-public class BillingAddress
-{
+public class BillingAddress implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-private int id;
-private String apartmentNumber;
-private String streetName;
-private String city;
-private String state;
-private String country;
-
+	private int id;
+	@NotEmpty(message="please enter the apartment number")
+    private String apartmentNumber;
+	@NotEmpty(message="please enter the streetName")
+    private String streetName;
+	@NotEmpty(message="please enter the city")
+    private String city;
+	@NotEmpty(message="please enter the state")
+    private String state;
+	@NotEmpty(message="please enter the country")
+    private String country;
+	@NotEmpty(message="please enter the zipcode")
+	private String zipcode;
+	
 public int getId() {
 	return id;
 }
@@ -59,5 +69,4 @@ public String getZipcode() {
 public void setZipcode(String zipcode) {
 	this.zipcode = zipcode;
 }
-private String zipcode;
 }

@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-  <h6>write some copyright</h6>
+
 </body>
 </html>

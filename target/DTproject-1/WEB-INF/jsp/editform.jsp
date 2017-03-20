@@ -11,6 +11,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Edit form</title>
+
+<style>
+ body {
+    background-color: navajo white;
+    margin : 9%;
+}
+ </style>
+
 </head>
 <body>
 

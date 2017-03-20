@@ -13,4 +13,6 @@ public interface ProductDAO
 	
 	void deleteProduct(int id);
 	void updateProduct(Product product);
+	byte[] loadImage(int productid);
+	   List<Product> getProductByDiscount();
 }

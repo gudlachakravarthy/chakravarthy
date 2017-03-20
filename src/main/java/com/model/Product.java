@@ -1,13 +1,17 @@
 package com.model;
 
 
+import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Basic;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
@@ -18,7 +22,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 @Table(name="product")
-public class Product
+public class Product implements Serializable
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -36,9 +40,18 @@ public class Product
 	private Category category;
 	@Transient
 	private MultipartFile image;
+	 @Lob
+	  @Basic(fetch=FetchType.LAZY)
+	  private byte[] picture;
 	
 	public int getId() {
 		return id;
+	}
+	public byte[] getPicture() {
+		return picture;
+	}
+	public void setPicture(byte[] picture) {
+		this.picture = picture;
 	}
 	public void setId(int id) {
 		this.id = id;

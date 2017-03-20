@@ -8,7 +8,25 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Form</title>
+<title>Product Form</title>
+
+<style>
+ body {
+    background-color: SeaShell;
+    margin-top: 6%;
+    margin-bottom: 1%;
+    margin-right: 1%;
+    margin-left: 1%;
+}
+
+form{
+position:absolute;
+top:25%;
+left:5%;
+z-index:10;
+}  
+
+ </style>
 
 <script>
   $(function(){
@@ -19,13 +37,14 @@
 </script> 
   
 </head>
-
+<c:url var="im" value="/resources/Img/sailboat.jpg"></c:url>
 <body>
-
+<img src="${im}" style="width:99.9%;margin-top:-2%;">
+<form>
  <div class="container-wrapper"> 
   <div class="container">
   <c:url var="addAction" value="/admin/product/addproduct"></c:url>
-  <form:form id="registerForm" modelAttribute="product" method="post" action="${addAction}" enctype="multipart/form-data">>
+  <form:form id="registerForm" modelAttribute="product" method="post" action="${addAction}" enctype="multipart/form-data">
   <div class="form-group">
    <label for="id"></label>
    <form:hidden path="id"/>
@@ -68,7 +87,7 @@
  
   <div class="form-group">
    <label for="image">Image</label>
-   <form:input path="image" type="file"/>
+   <input name="fileUpload" type="file"/>
   </div>
 
 
@@ -77,6 +96,6 @@
   </form:form>
   </div>
  </div>
- 
+ </form>
 </body>
 </html>

@@ -37,4 +37,12 @@ public class ProductServiceImpl implements ProductService
 	{
 		productdao.updateProduct(product);
 	}
+	public byte[] loadImage(int productid)
+	{
+		return productdao.loadImage(productid);
+	}
+	public List<Product> getProductByDiscount()
+	{
+		return productdao.getProductByDiscount();
+	}
 }
